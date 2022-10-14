@@ -7,7 +7,7 @@ const Footer = () => {
       <Container>
         <div className="py-14 flex flex-col lg:flex-row items-center">
           <h3 className="text-2xl lg:text-[1.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Made with ❤️ by A Vet Who Codes
+            Made with ❤️ by A Vet That Codes
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
