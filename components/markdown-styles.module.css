@@ -20,3 +20,18 @@
 .markdown pre {
   overflow: auto !important;
 }
+
+.markdown img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.markdown p a {
+  font-weight: 600;
+  color: #1C2533;
+}
+
+.markdown p a:hover {
+  text-decoration: underline;
+}
