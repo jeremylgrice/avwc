@@ -1,6 +1,6 @@
 ---
 title: 'Build & deploy a great looking site with NextJS and Netlify'
-excerpt: 'ABuild & deploy a great looking site with NextJS and Netlify....'
+excerpt: 'Have you ever wanted a quick and easy way to build and deploy a website? Are you overwhelmed by the number of....'
 coverImage: '/assets/blog/cover-photos/fog.webp'
 date: '2022-10-15T04:30:00.322Z'
 author:
