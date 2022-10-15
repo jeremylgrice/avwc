@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'librefranklinthin';
+  src: url('../fonts/librefranklin-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/librefranklin-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ptserifregular';
+  src: url('../fonts/ptserif-regular-webfont.woff2') format('woff2'),
+       url('../fonts/ptserif-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: 'ptserifregular', Arial, sans-serif !important;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6 !important;
+}
