@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { paginateArray, PaginatedResult } from './pagination'
 
 const postsDirectory = join(process.cwd(), '_posts')
 
@@ -44,4 +45,18 @@ export function getAllPosts(fields: string[] = []) {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
+}
+
+export function getPaginatedPosts(
+  fields: string[] = [],
+  page: number = 1,
+  postsPerPage: number = 5
+): PaginatedResult<any> {
+  const allPosts = getAllPosts(fields)
+  return paginateArray(allPosts, page, postsPerPage)
+}
+
+export function getTotalPostsCount(): number {
+  const slugs = getPostSlugs()
+  return slugs.length
 }
