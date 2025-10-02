@@ -26,22 +26,22 @@ const PostPreview = ({
       <div className="mb-5">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug text-surface-800">
+      <h3 className="text-3xl mb-3 leading-snug text-white font-bold">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a 
-            className="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-surface-900 text-surface-800 rounded"
+            className="hover:underline hover:text-surface-200 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-surface-900 rounded"
             aria-label={`Read full article: ${title}`}
           >
             {title}
           </a>
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className="text-lg mb-4 text-surface-200">
         <time dateTime={date}>
           <DateFormatter dateString={date} />
         </time>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4 text-surface-100">{excerpt}</p>
       <div className="author-info" aria-label={`Article by ${author.name}`}>
         <Avatar name={author.name} picture={author.picture} />
       </div>

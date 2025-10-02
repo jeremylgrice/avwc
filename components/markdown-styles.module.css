@@ -1,5 +1,6 @@
 .markdown {
   @apply text-lg leading-relaxed;
+  color: #f1f5f9; /* surface-100 for readable text */
 }
 
 .markdown p,
@@ -11,14 +12,65 @@
 
 .markdown h2 {
   @apply text-3xl mt-12 mb-4 leading-snug;
+  color: #f8fafc; /* surface-50 for headings */
 }
 
 .markdown h3 {
   @apply text-4xl mt-8 mb-4 leading-snug;
+  color: #f8fafc; /* surface-50 for headings */
 }
 
 .markdown pre {
-  overflow: auto !important;
+  background: #1e293b !important; /* surface-800 */
+  border: 1px solid #475569; /* surface-600 */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-size: 16px; /* Increased for better readability */
+  line-height: 1.6; /* Better spacing */
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  font-weight: 400; /* Ensure normal weight */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  transform: translateZ(0); /* Force GPU rendering for crisp text */
+}
+
+.markdown pre code {
+  background: transparent !important;
+  color: #f1f5f9 !important; /* surface-100 */
+  font-size: 16px; /* Match parent font size */
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  font-weight: 400; /* Ensure normal weight */
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  transform: translateZ(0); /* Force GPU rendering for crisp text */
+}
+
+.markdown code {
+  background: #334155 !important; /* surface-700 */
+  color: #f1f5f9 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em; /* Slightly increased from 0.9em */
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+}
+
+.markdown p code {
+  background: #334155 !important; /* surface-700 */
+  color: #f1f5f9 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
 }
 
 .markdown img {
@@ -29,9 +81,10 @@
 
 .markdown p a {
   font-weight: 600;
-  color: #1C2533;
+  color: #60a5fa; /* blue-400 for dark theme */
 }
 
 .markdown p a:hover {
   text-decoration: underline;
+  color: #93c5fd; /* blue-300 for hover */
 }

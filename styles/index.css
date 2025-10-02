@@ -2,31 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'librefranklinthin';
-  src: url('../fonts/librefranklin-variablefont_wght-webfont.woff2') format('woff2'),
-       url('../fonts/librefranklin-variablefont_wght-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ptserifregular';
-  src: url('../fonts/ptserif-regular-webfont.woff2') format('woff2'),
-       url('../fonts/ptserif-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ADA Compliant Dark Theme */
 body {
-  @apply bg-surface-900 text-white;
+  @apply bg-surface-900 text-white font-sans;
 }
 
 * {
-  font-family: 'ptserifregular', Arial, sans-serif !important;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Ensure code elements use monospace font */
+code, pre, tt, kbd, samp {
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
 }
 
 p {
@@ -56,4 +47,100 @@ a {
 
 .skip-link:focus {
   @apply translate-y-0;
+}
+
+/* Prism.js Code Highlighting Theme - Custom Grey-Blue */
+pre[class*="language-"] {
+  background: #1e293b !important; /* surface-800 */
+  border: 1px solid #475569; /* surface-600 */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+code[class*="language-"] {
+  background: transparent !important;
+  color: #f1f5f9 !important; /* surface-100 */
+  font-size: 14px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  background: #334155 !important; /* surface-700 */
+  color: #f1f5f9 !important;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Syntax highlighting colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #64748b; /* surface-500 */
+}
+
+.token.punctuation {
+  color: #cbd5e1; /* surface-300 */
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f87171; /* red-400 */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #4ade80; /* green-400 */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #60a5fa; /* blue-400 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #a78bfa; /* violet-400 */
+}
+
+.token.function,
+.token.class-name {
+  color: #fbbf24; /* yellow-400 */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fb7185; /* pink-400 */
+}
+
+/* Line numbers */
+.line-numbers .line-numbers-rows {
+  border-right: 1px solid #475569; /* surface-600 */
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+.line-numbers-rows > span:before {
+  color: #64748b; /* surface-500 */
 }

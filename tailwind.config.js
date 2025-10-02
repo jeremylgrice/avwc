@@ -38,6 +38,10 @@ module.exports = {
         success: "#0070f3",
         cyan: "#79FFE1",
       },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Monaco", "Consolas", "monospace"],
+      },
       spacing: {
         28: "7rem",
       },
