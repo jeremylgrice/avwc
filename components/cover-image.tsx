@@ -11,17 +11,23 @@ const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
     <img
       src={src}
-      alt={`Cover Image for ${title}`}
-      className={cn('shadow-sm', {
+      alt={`Cover image for blog post: ${title}`}
+      className={cn('shadow-sm w-full', {
         'hover:shadow-lg transition-shadow duration-200': slug,
       })}
+      loading="lazy"
     />
   )
   return (
     <div className="sm:mx-0">
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a aria-label={title}>{image}</a>
+          <a 
+            aria-label={`Read full article: ${title}`}
+            className="focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-surface-900 rounded"
+          >
+            {image}
+          </a>
         </Link>
       ) : (
         image

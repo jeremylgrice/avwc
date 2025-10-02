@@ -20,6 +20,11 @@
   font-display: swap;
 }
 
+/* ADA Compliant Dark Theme */
+body {
+  @apply bg-surface-900 text-white;
+}
+
 * {
   font-family: 'ptserifregular', Arial, sans-serif !important;
 }
@@ -27,4 +32,28 @@
 p {
     font-size: 20px;
     line-height: 1.6 !important;
+    @apply text-gray-50; /* Higher contrast for body text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-white; /* Maximum contrast for headings */
+}
+
+a {
+  @apply text-blue-200 hover:text-blue-100 transition-colors duration-200 no-underline hover:underline;
+  text-decoration-skip-ink: auto;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  @apply outline-2 outline-offset-2 outline-blue-300;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  @apply absolute -top-10 left-4 bg-blue-600 text-white px-4 py-2 rounded transform -translate-y-full transition-transform;
+}
+
+.skip-link:focus {
+  @apply translate-y-0;
 }
