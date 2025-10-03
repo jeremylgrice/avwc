@@ -4,7 +4,7 @@ excerpt: "Explore the essential SCSS features like variables, mixins, and extens
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2021-09-07T03:25:22.252Z"
 author:
-  name: "vet that codes"
+  name: "Jeremy"
   picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"

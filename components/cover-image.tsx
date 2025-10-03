@@ -5,14 +5,15 @@ type Props = {
   title: string
   src: string
   slug?: string
+  className?: string
 }
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, slug, className }: Props) => {
   const image = (
     <img
       src={src}
       alt={`Cover image for blog post: ${title}`}
-      className={cn('shadow-sm w-full', {
+      className={cn('shadow-sm w-full h-full object-cover', className, {
         'hover:shadow-lg transition-shadow duration-200': slug,
       })}
       loading="lazy"

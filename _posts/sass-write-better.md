@@ -4,7 +4,7 @@ excerpt: "Avoid repetitive styles and write scalable, maintainable SASS using dy
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2021-05-15T03:15:18.788Z"
 author:
-  name: vet that codes
+  name: "Jeremy"
   picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"

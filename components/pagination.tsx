@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+import { Button } from './ui/button'
+import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { PaginationInfo, generatePageNumbers } from '../lib/pagination'
 
 type Props = {
@@ -8,7 +10,6 @@ type Props = {
 }
 
 const Pagination = ({ pagination, basePath = '' }: Props) => {
-  const router = useRouter()
   const { currentPage, totalPages, hasNextPage, hasPreviousPage } = pagination
 
   if (totalPages <= 1) {
@@ -24,74 +25,108 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
     return `${basePath}?page=${page}`
   }
 
-  const buttonBaseClass = "px-4 py-2 text-sm font-medium transition-colors duration-200 border focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-surface-900"
-  const activeClass = "bg-surface-800 text-white border-surface-600"
-  const inactiveClass = "bg-surface-800 text-gray-100 border-surface-600 hover:bg-surface-700 hover:border-surface-500 hover:text-white"
-  const disabledClass = "bg-surface-800 text-gray-400 border-surface-700 cursor-not-allowed opacity-50"
-
   return (
-    <nav className="flex items-center justify-center space-x-2 mt-8 mb-16" aria-label="Blog posts pagination" role="navigation">
-      {/* Previous Button */}
-      {hasPreviousPage ? (
-        <Link 
-          href={createPageUrl(currentPage - 1)}
-          className={`${buttonBaseClass} ${inactiveClass} rounded-l-md`}
-          aria-label={`Go to previous page, page ${currentPage - 1}`}
-        >
-          Previous
-        </Link>
-      ) : (
-        <span 
-          className={`${buttonBaseClass} ${disabledClass} rounded-l-md`}
-          aria-disabled="true"
-          aria-label="Previous page unavailable"
-        >
-          Previous
-        </span>
-      )}
-
-      {/* Page Numbers */}
-      {pageNumbers.map((pageNum) => (
-        pageNum === currentPage ? (
-          <span
-            key={pageNum}
-            className={`${buttonBaseClass} ${activeClass}`}
-            aria-current="page"
-            aria-label={`Current page, page ${pageNum}`}
-          >
-            {pageNum}
-          </span>
-        ) : (
-          <Link
-            key={pageNum}
-            href={createPageUrl(pageNum)}
-            className={`${buttonBaseClass} ${inactiveClass}`}
-            aria-label={`Go to page ${pageNum}`}
-          >
-            {pageNum}
+    <motion.nav 
+      className="flex items-center justify-center mt-16 mb-8" 
+      aria-label="Blog posts pagination" 
+      role="navigation"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <div className="flex items-center gap-2 bg-surface-800/50 backdrop-blur-sm rounded-xl p-2 border border-surface-600">
+        {/* Previous Button */}
+        {hasPreviousPage ? (
+          <Link href={createPageUrl(currentPage - 1)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-surface-200 hover:text-white hover:bg-surface-700"
+              aria-label={`Go to previous page, page ${currentPage - 1}`}
+            >
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              Previous
+            </Button>
           </Link>
-        )
-      ))}
+        ) : (
+          <Button
+            variant="ghost"
+            size="sm"
+            disabled
+            className="text-surface-400 cursor-not-allowed"
+            aria-disabled="true"
+            aria-label="Previous page unavailable"
+          >
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            Previous
+          </Button>
+        )}
 
-      {/* Next Button */}
-      {hasNextPage ? (
-        <Link 
-          href={createPageUrl(currentPage + 1)}
-          className={`${buttonBaseClass} ${inactiveClass} rounded-r-md`}
-          aria-label={`Go to next page, page ${currentPage + 1}`}
-        >
-          Next
-        </Link>
-      ) : (
-        <span 
-          className={`${buttonBaseClass} ${disabledClass} rounded-r-md`}
-          aria-disabled="true"
-          aria-label="Next page unavailable"
-        >
-          Next
-        </span>
-      )}
-    </nav>
+        {/* Page Numbers */}
+        <div className="flex items-center gap-1 mx-2">
+          {pageNumbers.map((pageNum, index) => {
+            if (pageNum === null) {
+              return (
+                <div key={`ellipsis-${index}`} className="px-2 py-1">
+                  <MoreHorizontal className="h-4 w-4 text-surface-400" />
+                </div>
+              )
+            }
+
+            const isCurrentPage = pageNum === currentPage
+            
+            return (
+              <Link key={pageNum} href={createPageUrl(pageNum)}>
+                <Button
+                  variant={isCurrentPage ? "default" : "ghost"}
+                  size="sm"
+                  className={
+                    isCurrentPage
+                      ? "bg-primary-600 hover:bg-primary-700 text-white min-w-[2.5rem]"
+                      : "text-surface-200 hover:text-white hover:bg-surface-700 min-w-[2.5rem]"
+                  }
+                  aria-label={
+                    isCurrentPage
+                      ? `Current page, page ${pageNum}`
+                      : `Go to page ${pageNum}`
+                  }
+                  aria-current={isCurrentPage ? "page" : undefined}
+                >
+                  {pageNum}
+                </Button>
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* Next Button */}
+        {hasNextPage ? (
+          <Link href={createPageUrl(currentPage + 1)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-surface-200 hover:text-white hover:bg-surface-700"
+              aria-label={`Go to next page, page ${currentPage + 1}`}
+            >
+              Next
+              <ChevronRight className="h-4 w-4 ml-1" />
+            </Button>
+          </Link>
+        ) : (
+          <Button
+            variant="ghost"
+            size="sm"
+            disabled
+            className="text-surface-400 cursor-not-allowed"
+            aria-disabled="true"
+            aria-label="Next page unavailable"
+          >
+            Next
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Button>
+        )}
+      </div>
+    </motion.nav>
   )
 }
 
