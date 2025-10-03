@@ -33,7 +33,7 @@ const MoreStories = ({ posts, currentPage = 1 }: Props) => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl lg:text-5xl font-bold text-white"
+          className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white"
         >
           {title}
         </motion.h2>

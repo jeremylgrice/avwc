@@ -6,7 +6,7 @@ import { CMS_NAME } from '../lib/constants'
 const Intro = () => {
   return (
     <motion.section 
-      className="flex flex-col items-center text-center py-16 lg:py-20 relative bg-surface-900/95 backdrop-blur-sm mx-4 rounded-2xl mb-8" 
+      className="flex flex-col items-center text-center py-8 lg:py-20 relative bg-surface-900/95 backdrop-blur-sm mx-2 lg:mx-4 rounded-xl lg:rounded-2xl mb-8 px-4 lg:px-8" 
       role="banner"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ const Intro = () => {
       </motion.div>
 
       <motion.h1 
-        className="text-5xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight"
+        className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -40,7 +40,7 @@ const Intro = () => {
       </motion.h1>
 
       <motion.p
-        className="text-xl lg:text-2xl text-surface-100 max-w-3xl leading-relaxed"
+        className="text-lg sm:text-xl lg:text-2xl text-surface-100 max-w-3xl leading-relaxed px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -49,7 +49,7 @@ const Intro = () => {
       </motion.p>
 
       <motion.div
-        className="flex items-center gap-2 mt-8 text-surface-200"
+        className="flex flex-col sm:flex-row items-center gap-2 mt-8 text-surface-200 text-sm sm:text-base"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}

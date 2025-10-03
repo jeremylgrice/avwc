@@ -64,7 +64,7 @@ const HeroPost = ({
                 </Badge>
               </div>
 
-              <CardTitle className="text-3xl lg:text-5xl font-bold leading-tight text-white group-hover:text-primary-200 transition-colors">
+              <CardTitle className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-white group-hover:text-primary-200 transition-colors">
                 <Link href={`/posts/${slug}`}>
                   <a 
                     className="hover:underline decoration-primary-400 underline-offset-4 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-surface-900 rounded-lg"
