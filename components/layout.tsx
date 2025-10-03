@@ -2,6 +2,7 @@ import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
 import { motion } from 'framer-motion'
+import { UI } from '../lib/constants'
 
 type Props = {
   preview?: boolean
@@ -19,7 +20,7 @@ const Layout = ({ preview, children }: Props) => {
           className="skip-link"
           tabIndex={1}
         >
-          Skip to main content
+          {UI.navigation.skipToContent}
         </a>
         
         <Alert preview={preview} />

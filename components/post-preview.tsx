@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge'
 import { Clock, User } from 'lucide-react'
 import type Author from '../interfaces/author'
+import { getText } from '../lib/constants'
 
 type Props = {
   title: string
@@ -51,7 +52,7 @@ const PostPreview = ({
               </time>
             </div>
             <Badge variant="secondary" className="text-xs">
-              {Math.ceil(excerpt.split(' ').length / 200)} min read
+              {getText.readingTime(excerpt.split(' ').length)}
             </Badge>
           </div>
           

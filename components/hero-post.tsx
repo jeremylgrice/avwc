@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge'
 import { Clock, User, Star } from 'lucide-react'
 import type Author from '../interfaces/author'
+import { CONTENT, getText } from '../lib/constants'
 
 type Props = {
   title: string
@@ -38,7 +39,7 @@ const HeroPost = ({
             <div className="absolute top-4 left-4 z-10">
               <Badge className="bg-primary-600/90 backdrop-blur-sm border-primary-400/50">
                 <Star className="w-3 h-3 mr-1" />
-                Featured
+                {CONTENT.stories.featuredBadge}
               </Badge>
             </div>
             <CoverImage 
@@ -60,7 +61,7 @@ const HeroPost = ({
                   </time>
                 </div>
                 <Badge variant="secondary" className="text-xs">
-                  {Math.ceil(excerpt.split(' ').length / 200)} min read
+                  {getText.readingTime(excerpt.split(' ').length)}
                 </Badge>
               </div>
 
@@ -81,7 +82,7 @@ const HeroPost = ({
               <div className="flex items-center justify-between pt-4 border-t border-surface-700">
                 <Link href={`/posts/${slug}`}>
                   <a className="text-primary-400 hover:text-primary-300 font-medium transition-colors flex items-center gap-2">
-                    Read more
+                    {CONTENT.stories.readMore}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

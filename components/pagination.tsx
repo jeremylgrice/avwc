@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { PaginationInfo, generatePageNumbers } from '../lib/pagination'
+import { UI, getText } from '../lib/constants'
 
 type Props = {
   pagination: PaginationInfo
@@ -28,7 +29,7 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
   return (
     <motion.nav 
       className="flex items-center justify-center mt-16 mb-8" 
-      aria-label="Blog posts pagination" 
+      aria-label={UI.navigation.blogPagination} 
       role="navigation"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -42,10 +43,10 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
               variant="ghost"
               size="sm"
               className="text-surface-200 hover:text-white hover:bg-surface-700 px-2 sm:px-3"
-              aria-label={`Go to previous page, page ${currentPage - 1}`}
+              aria-label={getText.previousPageLabel(currentPage - 1)}
             >
               <ChevronLeft className="h-4 w-4 sm:mr-1" />
-              <span className="hidden sm:inline">Previous</span>
+              <span className="hidden sm:inline">{UI.navigation.previous}</span>
             </Button>
           </Link>
         ) : (
@@ -55,10 +56,10 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
             disabled
             className="text-surface-400 cursor-not-allowed px-2 sm:px-3"
             aria-disabled="true"
-            aria-label="Previous page unavailable"
+            aria-label={UI.accessibility.previousPageUnavailable}
           >
             <ChevronLeft className="h-4 w-4 sm:mr-1" />
-            <span className="hidden sm:inline">Previous</span>
+            <span className="hidden sm:inline">{UI.navigation.previous}</span>
           </Button>
         )}
 
@@ -106,9 +107,9 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
               variant="ghost"
               size="sm"
               className="text-surface-200 hover:text-white hover:bg-surface-700 px-2 sm:px-3"
-              aria-label={`Go to next page, page ${currentPage + 1}`}
+              aria-label={getText.nextPageLabel(currentPage + 1)}
             >
-              <span className="hidden sm:inline">Next</span>
+              <span className="hidden sm:inline">{UI.navigation.next}</span>
               <ChevronRight className="h-4 w-4 sm:ml-1" />
             </Button>
           </Link>
@@ -119,9 +120,9 @@ const Pagination = ({ pagination, basePath = '' }: Props) => {
             disabled
             className="text-surface-400 cursor-not-allowed px-2 sm:px-3"
             aria-disabled="true"
-            aria-label="Next page unavailable"
+            aria-label={UI.accessibility.nextPageUnavailable}
           >
-            <span className="hidden sm:inline">Next</span>
+            <span className="hidden sm:inline">{UI.navigation.next}</span>
             <ChevronRight className="h-4 w-4 sm:ml-1" />
           </Button>
         )}

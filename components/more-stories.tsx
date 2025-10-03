@@ -2,6 +2,7 @@ import PostPreview from './post-preview'
 import { motion } from 'framer-motion'
 import { Separator } from '@radix-ui/react-separator'
 import type Post from '../interfaces/post'
+import { getText, UI } from '../lib/constants'
 
 type Props = {
   posts: Post[]
@@ -13,7 +14,7 @@ const MoreStories = ({ posts, currentPage = 1 }: Props) => {
     return null
   }
 
-  const title = currentPage === 1 ? 'Latest Stories' : `Stories - Page ${currentPage}`
+  const title = getText.storiesPageTitle(currentPage)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,10 +27,10 @@ const MoreStories = ({ posts, currentPage = 1 }: Props) => {
   }
 
   return (
-    <section aria-labelledby="more-stories-heading" className="py-16">
+    <section aria-labelledby={UI.accessibility.moreStoriesHeading} className="py-16">
       <div className="flex items-center gap-4 mb-12">
         <motion.h2 
-          id="more-stories-heading"
+          id={UI.accessibility.moreStoriesHeading}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
