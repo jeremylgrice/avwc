@@ -36,15 +36,14 @@ const PostPreview = ({
           </a>
         </Link>
       </h3>
-      <div className="text-lg mb-4 text-surface-200">
+      <div className="text-sm mb-4 text-surface-200">
         <time dateTime={date}>
           <DateFormatter dateString={date} />
         </time>
+
       </div>
-      <p className="text-lg leading-relaxed mb-4 text-surface-100">{excerpt}</p>
-      <div className="author-info" aria-label={`Article by ${author.name}`}>
-        <Avatar name={author.name} picture={author.picture} />
-      </div>
+      <p className="text-sm leading-relaxed mb-4 text-surface-100">{excerpt}</p>
+
     </article>
   )
 }

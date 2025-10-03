@@ -17,7 +17,7 @@ const MoreStories = ({ posts, currentPage = 1 }: Props) => {
     <section aria-labelledby="more-stories-heading">
       <h2 
         id="more-stories-heading"
-        className="mb-8 text-5xl font-bold tracking-tighter leading-tight text-slate-800"
+        className="mb-8 text-5xl font-bold tracking-tighter leading-tight text-surface-800"
       >
         {title}
       </h2>
