@@ -47,17 +47,6 @@ const Intro = () => {
       >
         {CONTENT.intro.description}
       </motion.p>
-
-      <motion.div
-        className="flex flex-col sm:flex-row items-center gap-2 mt-8 text-surface-200 text-sm sm:text-base"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-      >
-        <span>{CONTENT.intro.bottomText}</span>
-        <Heart className="w-4 h-4 text-red-400 fill-current" />
-        <span>{CONTENT.intro.bottomDescription}</span>
-      </motion.div>
     </motion.section>
   )
 }

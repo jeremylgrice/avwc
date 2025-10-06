@@ -51,7 +51,7 @@ export default function Index({ heroPost, morePosts, paginationInfo, currentPage
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const page = parseInt(query.page as string) || 1
-  const postsPerPage = 4 // Show 4 posts per page (plus hero post on first page)
+  const postsPerPage = 6 // Show 4 posts per page (plus hero post on first page)
   
   const fields = [
     'title',

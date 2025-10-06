@@ -26,8 +26,6 @@ export const CONTENT = {
     mainTitle: 'Vet That',
     titleAccent: 'Codes',
     description: 'Sharing practical insights, tutorials, and stories from the world of software development - bridging ideas, best practices, and clean code.',
-    bottomText: 'Made with',
-    bottomDescription: 'for fellow veterans transitioning to tech'
   },
   stories: {
     latestTitle: 'Latest Stories',
@@ -66,8 +64,11 @@ export const UI = {
 export const getText = {
   storiesPageTitle: (pageNumber: number) => 
     pageNumber === 1 ? CONTENT.stories.latestTitle : `${CONTENT.stories.pageTitle} ${pageNumber}`,
-  readingTime: (wordCount: number) => 
-    `${Math.ceil(wordCount / 200)} ${CONTENT.stories.minRead}`,
+  readingTime: (text: string | undefined) => {
+    if (!text || typeof text !== 'string') return `1 ${CONTENT.stories.minRead}`
+    const wordCount = text.split(' ').length
+    return `${Math.ceil(wordCount / 200)} ${CONTENT.stories.minRead}`
+  },
   previousPageLabel: (pageNumber: number) => 
     `${UI.accessibility.goToPreviousPage} ${pageNumber}`,
   nextPageLabel: (pageNumber: number) => 

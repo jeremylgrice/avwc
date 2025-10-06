@@ -52,7 +52,7 @@ const PostPreview = ({
               </time>
             </div>
             <Badge variant="secondary" className="text-xs">
-              {getText.readingTime(excerpt.split(' ').length)}
+              {getText.readingTime(excerpt)}
             </Badge>
           </div>
           

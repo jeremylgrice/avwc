@@ -10,8 +10,6 @@ ogImage:
   url: "/assets/blog/cover-photos/camping.webp"
 ---
 
-![A cabin in the woods on daytime](/assets/blog/cover-photos/camping.webp)
-
 So you want to grab data from somewhere with JavaScript, but aren’t sure how to do it? Well look no further!
 
 Today, I want to show you how to use the **Fetch API**, which is now built into JavaScript. We’ll cover:
