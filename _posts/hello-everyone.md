@@ -4,7 +4,7 @@ excerpt: "Hello Everyone! I hope that we can all reach our goals in 2023 and bey
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2023-01-04T23:03:30.036Z"
 ogImage:
-  url: ""
+  url: "/assets/blog/cover-photos/camping.webp"
 ---
 
 # Hello Everyone! I hope that we can all reach our goals in 2023 and beyond!!

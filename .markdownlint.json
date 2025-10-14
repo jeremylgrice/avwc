@@ -1,0 +1,18 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD033": false,
+  "MD041": false,
+  "MD001": false,
+  "MD024": false,
+  "MD026": false,
+  "MD025": false,
+  "MD022": false,
+  "MD036": false,
+  "MD034": false,
+  "MD059": false,
+  "MD047": false,
+  "MD046": {
+    "style": "fenced"
+  }
+}

@@ -16,13 +16,13 @@ ogImage:
 ![Photo by Roudy Salameh from Pexels](https://cdn-images-1.medium.com/max/800/1*MSKHX24iYao7fDrpZIf5Vg.jpeg)  
 [Photo by Roudy Salameh from Pexels](https://www.pexels.com/photo/empty-road-in-middle-of-trees-1930422/)
 
-JavaScript is a pretty fun language. While it does some quirky and weird things at times, it’s enjoyable to write on a daily basis. The creators of the language have given us access to some really nifty and powerful built-in tools. Let’s go over 3 pretty useful and common things you can do with the language.
+JavaScript is a pretty fun language. While it does some quirky and weird things at times, it's enjoyable to write on a daily basis. The creators of the language have given us access to some really nifty and powerful built-in tools. Let's go over 3 pretty useful and common things you can do with the language.
 
 ---
 
 ## Spread syntax
 
-Have you ever been working on some logic, and you have a base set of data that you’d like to build upon as scenarios change? Instead of having to copy and paste your object or array values over and over again, you can use the spread syntax. This keeps repetitive code to a minimum and leads to more readable code.
+Have you ever been working on some logic, and you have a base set of data that you'd like to build upon as scenarios change? Instead of having to copy and paste your object or array values over and over again, you can use the spread syntax. This keeps repetitive code to a minimum and leads to more readable code.
 
 ```typescript
 const ourObject = {
@@ -34,7 +34,7 @@ const ourObject = {
 console.log(ourObject);
 // {valueA: 'A', valueB: 'B', valueC: 'C'}
 
-// Then, let’s build onto this initial object
+// Then, let's build onto this initial object
 const ourNewObject = {
   ...ourObject,
   valueD: "D",
@@ -93,11 +93,11 @@ const exFunction = (a) => a + 2;
 
 1. Without curly braces:  
    `(params) => expression`  
-   The expression is evaluated and returned automatically (no `return` needed). Parentheses can be omitted if there’s only one parameter.
+   The expression is evaluated and returned automatically (no `return` needed). Parentheses can be omitted if there's only one parameter.
 
 2. With curly braces:  
    `(params) => { code here }`  
-   You can write multiple statements, but you’ll need an explicit `return`.
+   You can write multiple statements, but you'll need an explicit `return`.
 
 > An arrow function expression is a compact alternative to a traditional function expression, with some semantic differences and limitations.  
 > [Arrow functions – MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
@@ -139,7 +139,7 @@ try {
 
 ## About me
 
-> _Hey there! I’m Jeremy. I write articles about front-end development to help beginners understand the inner workings of web development. If you have questions, leave a comment, connect with me on [LinkedIn @JeremyGrice](https://www.linkedin.com/in/jeremylgrice/), or visit my site [VetThatCodes](https://vetthatcodes.com/)._
+> _Hey there! I'm Jeremy. I write articles about front-end development to help beginners understand the inner workings of web development. If you have questions, leave a comment, connect with me on [LinkedIn @JeremyGrice](https://www.linkedin.com/in/jeremylgrice/), or visit my site [VetThatCodes](https://vetthatcodes.com/)._
 
 More from me: [Vet That Codes on Medium](https://medium.com/@vetthatcodes)
 
