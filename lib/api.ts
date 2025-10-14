@@ -6,13 +6,21 @@ import { paginateArray, PaginatedResult } from './pagination'
 const postsDirectory = join(process.cwd(), '_posts')
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+  // Only return .md files, ignore backups and non-markdown files
+  return fs
+    .readdirSync(postsDirectory)
+    .filter((file) => file.endsWith('.md') && !file.startsWith('~') && !file.startsWith('.'))
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+    // Check if file exists before reading
+    if (!fs.existsSync(fullPath)) {
+      // Return null or throw error if file doesn't exist
+      return null
+    }
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
   type Items = {
@@ -41,7 +49,8 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs()
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+     .map((slug) => getPostBySlug(slug, fields))
+     .filter((post) => post !== null)
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
