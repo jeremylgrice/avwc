@@ -3,9 +3,6 @@ title: "Hello Everyone! I hope that we can all reach our goals in 2023 and beyon
 excerpt: "Hello Everyone! I hope that we can all reach our goals in 2023 and beyond!!"
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2023-01-04T23:03:30.036Z"
-author:
-  name: "Jeremy"
-  picture: ""
 ogImage:
   url: ""
 ---

@@ -32,7 +32,6 @@ export default function Index({ heroPost, morePosts, paginationInfo, currentPage
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
-              author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
@@ -57,7 +56,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     'title',
     'date',
     'slug',
-    'author',
     'coverImage',
     'excerpt',
   ]

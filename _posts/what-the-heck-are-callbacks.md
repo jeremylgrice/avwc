@@ -3,9 +3,6 @@ title: "What the Heck Are Callbacks?"
 excerpt: "An easy-to-understand breakdown of what callbacks are in JavaScript, with examples and solutions to callback hell."
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2021-05-17T03:30:27.217Z"
-author:
-  name: Jeremy
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"
 ---

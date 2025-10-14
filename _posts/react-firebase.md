@@ -1,13 +1,10 @@
 ---
-title: 'Get Started with React & Google Firebase'
-excerpt: 'A tutorial on setting up a React project and using Google Firebase to store your data'
-coverImage: '/assets/blog/cover-photos/camping-hills.webp'
-date: '2022-09-13T01:00:00.322Z'
-author:
-  name: Jeremy
-  picture: '/assets/blog/authors/jeremy.jpeg'
+title: "Get Started with React & Google Firebase"
+excerpt: "A tutorial on setting up a React project and using Google Firebase to store your data"
+coverImage: "/assets/blog/cover-photos/camping-hills.webp"
+date: "2022-09-13T01:00:00.322Z"
 ogImage:
-  url: '/assets/blog/cover-photos/camping-hills.webp'
+  url: "/assets/blog/cover-photos/camping-hills.webp"
 ---
 
 So you are working with React, and want a fast and easy way to house your data. While there are a ton of different ways to achieve this, the way I will be showing you involves Firebase, which is a free (up to a certain threshold) option that is quick and easy to work with.
@@ -32,10 +29,9 @@ To set up your database, you will want to click on the left hand pane and open t
 
 Next, we will initialize Firebase in our app, and create a Firebase object. To do this, set up a file, and call it firebase.js. For the purposes of our demo, we will keep things simple and grab some data from our database and throw it onto the page.
 
-
 ```js
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "...",
@@ -45,11 +41,11 @@ const firebaseConfig = {
   storageBucket: "...",
   messagingSenderId: "...",
   appId: "...",
-  measurementId: "..."
+  measurementId: "...",
 };
 
 const app = initializeApp(firebaseConfig);
-const db =  getFirestore(app);
+const db = getFirestore(app);
 ```
 
 Then, to actually use our Firebase config and gain access to our data, we will want to setup another file which to grab the data from the database and put it on the page:
@@ -57,43 +53,40 @@ Then, to actually use our Firebase config and gain access to our data, we will w
 ```js
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase/firebase"
+import { db } from "../firebase/firebase";
 
 export default function ListFirebaseInformation() {
+  const [posts, setPost] = useState([]);
 
-    const [posts, setPost] = useState([]);
+  useEffect(() => {
+    getPosts();
+  }, []);
 
-    useEffect(() => {
-        getPosts();
-    }, []);
+  useEffect(() => {}, [posts]);
 
-    useEffect(() => {
-    }, [posts]);
+  function getPosts() {
+    const postCollectionReference = collection(db, "posts");
 
-    function getPosts() {
-        const postCollectionReference = collection(db, 'posts');
+    getDocs(postCollectionReference)
+      .then((response) => {
+        const allPosts = response.docs.map((post) => ({
+          data: post.data(),
+          id: post.id,
+        }));
 
-        getDocs(postCollectionReference)
-            .then(response => {
+        setPost(allPosts);
+      })
+      .catch((error) => console.log(error));
+  }
 
-                const allPosts = response.docs.map(post => ({
-                    data: post.data(),
-                    id: post.id,
-                }));
-
-                setPost(allPosts);
-
-            }).catch(error => console.log(error));
-    };
-
-    return (
-        <div>
-            <h4>List blog posts</h4>
-            {posts.map((post) => 
-                <a href={post.data.url}>{post.data.name}</a>
-            )};
-        </div>
-    )
+  return (
+    <div>
+      <h4>List blog posts</h4>
+      {posts.map((post) => (
+        <a href={post.data.url}>{post.data.name}</a>
+      ))};
+    </div>
+  );
 }
 ```
 
@@ -101,8 +94,6 @@ In the code snippet above, we are using connecting the React component to our fi
 
 After the 2 files above have been created, you are completely set up and good to start developing!
 
-
 ![alt text](https://miro.medium.com/max/640/0*_m_ETL-CboVhW6Kj.png)
-
 
 While this is a basic example of how to consume data from your database, you can also push data to a database, as well as write some complex logic to work with multiple databases at the same time.

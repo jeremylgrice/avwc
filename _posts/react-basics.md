@@ -3,9 +3,6 @@ title: "Level Up Your React Skills with Composition"
 excerpt: "Learn how to build scalable UI components in React using the power of composition. Say goodbye to repetitive code and hello to reusable logic!"
 coverImage: "/assets/blog/cover-photos/camping-hills.webp"
 date: "2021-05-21T00:39:59.250Z"
-author:
-  name: Jeremy
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping-hills.webp"
 ---

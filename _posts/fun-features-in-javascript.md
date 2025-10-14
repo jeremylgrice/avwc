@@ -1,11 +1,8 @@
 ---
 title: "Fun features in JavaScript"
-excerpt: "JavaScript has some really nifty and powerful built-in tools. Let’s go over three pretty useful and common things you can do with the language."
+excerpt: "JavaScript has some really nifty and powerful built-in tools...."
 coverImage: "https://cdn-images-1.medium.com/max/800/1*MSKHX24iYao7fDrpZIf5Vg.jpeg"
 date: "2025-10-03T00:00:00.000Z"
-author:
-  name: ""
-  picture: ""
 ogImage:
   url: "https://cdn-images-1.medium.com/max/800/1*MSKHX24iYao7fDrpZIf5Vg.jpeg"
 ---

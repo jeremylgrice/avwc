@@ -3,9 +3,6 @@ title: "Typescript — Understanding the basics"
 excerpt: "If you’re looking for a tool that can help keep your code organized and less prone to errors, I cannot recommend TypeScript enough."
 coverImage: "/assets/blog/cover-photos/treeline.webp"
 date: "2021-05-13T03:51:19.000Z"
-author:
-  name: Jeremy Grice
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"
 ---

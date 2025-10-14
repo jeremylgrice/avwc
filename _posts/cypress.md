@@ -1,18 +1,15 @@
 ---
-title: 'Testing your front end with cypress'
-excerpt: 'Cypress is a robust testing tool. It comes with a lot of really cool features, and can do things that other testing frameworks....'
-coverImage: '/assets/blog/cover-photos/treeline.webp'
-date: '2022-10-17T05:35:07.322Z'
-author:
-  name: Jeremy
-  picture: '/assets/blog/authors/jeremy.jpeg'
+title: "Testing your front end with cypress"
+excerpt: "Cypress is a robust testing tool. It comes with a lot of really cool features, and can do things that other testing frameworks...."
+coverImage: "/assets/blog/cover-photos/treeline.webp"
+date: "2022-10-17T05:35:07.322Z"
 ogImage:
-  url: '/assets/blog/cover-photos/treeline.webp'
+  url: "/assets/blog/cover-photos/treeline.webp"
 ---
+
 ### Why use Cypress?
 
 Cypress enables you to write all types of tests:
-
 
 • End-to-end tests
 
@@ -31,7 +28,6 @@ Cypress is a robust testing tool. It comes with a lot of really cool features, a
 • No more async hell. You never have to add a wait or a sleep to your tests, as Cypress will automatically wait for commands and assertions before continuing.
 
 • View screenshots taken automatically on failure, or videos of your entire test suite when run from the CLI.
-
 
 ### Requirements
 
@@ -68,11 +64,11 @@ Now that we have everything set up and ready to go, lets actually use it. Below,
 Lets get the most basic out of the way first. What if we wanted to have our test visit a specific site? Lets make use of cy.visit() and pass in our desired url.
 
 ```js
-describe('Our test', () => {
-  it('Visits vetthatcodes', () => {
-    cy.visit('https://www.vetthatcodes.com')
-  })
-})
+describe("Our test", () => {
+  it("Visits vetthatcodes", () => {
+    cy.visit("https://www.vetthatcodes.com");
+  });
+});
 ```
 
 When you run this test, you’ll notice a few things
@@ -90,7 +86,7 @@ One of the most common things you will use when working with Cypress is `.get(..
 Just as an example, if we wanted to get an element, and then check if it was disabled, we could do the following
 
 ```js
-cy.get('input').should('be.disabled') 
+cy.get("input").should("be.disabled");
 ```
 
 A few side notes about cy.get(...)
@@ -124,50 +120,50 @@ expect(true).to.be.true;
 • Length
 
 ```js
-cy.get('li.selected').should('have.length', 1)
+cy.get("li.selected").should("have.length", 1);
 ```
 
 • Class
 
 ```js
-cy.get('form').find('input').should('not.have.class', 'enabled')
+cy.get("form").find("input").should("not.have.class", "enabled");
 ```
 
 • Value
 
 ```js
-cy.get('textarea').should('have.value', 'this site is awesome')
+cy.get("textarea").should("have.value", "this site is awesome");
 ```
 
 • Visibility
 
 ```js
-cy.get('p').should('be.visible')
+cy.get("p").should("be.visible");
 
 // or
 
-cy.get('p.hidden').should('not.be.visible')
+cy.get("p.hidden").should("not.be.visible");
 ```
 
 • Existence
 
 ```js
-cy.get('[data-cy="loading"]').should('not.exist')
+cy.get('[data-cy="loading"]').should("not.exist");
 ```
 
 • State
 
 ```js
-cy.get(':radio').should('be.checked')
+cy.get(":radio").should("be.checked");
 ```
 
 • CSS
 
 ```js
 cy.get('[data-cy="completed"]').should(
-  'have.css',
-  'text-decoration',
-  'line-through'
+  "have.css",
+  "text-decoration",
+  "line-through"
 );
 ```
 
@@ -182,22 +178,29 @@ What if we had a HTML element with the following
 we could then check it with
 
 ```js
-cy.get('[data-cy="input"]').should('be.disabled')
+cy.get('[data-cy="input"]').should("be.disabled");
 ```
 
 • Chaining assertions
 
 ```js
-<a data-cy="assertions-link" class="active" href="https://on.cypress.io" target="_blank">Cypress Docs</a>
+<a
+  data-cy="assertions-link"
+  class="active"
+  href="https://on.cypress.io"
+  target="_blank"
+>
+  Cypress Docs
+</a>
 ```
 
 We could then check multiple things with a chain of assertions
 
 ```js
 cy.get('[data-cy="assertions-link"]')
-  .should('have.class', 'active')
-  .and('have.attr', 'href')
-  .and('include', 'cypress.io')
+  .should("have.class", "active")
+  .and("have.attr", "href")
+  .and("include", "cypress.io");
 ```
 
 #### Promises in Cypress
@@ -205,11 +208,11 @@ cy.get('[data-cy="assertions-link"]')
 We can useCypress.Promise to create promises, so if you return a promise from inside of commands like .then(), Cypress will not continue until those promises resolve. This is super neat, and very powerful. Lets write up a really quick example below.
 
 ```js
-cy.get('button').then((response) => {
+cy.get("button").then((response) => {
   return new Cypress.Promise((resolve, reject) => {
     // write your custom logic here
-  })
-})
+  });
+});
 ```
 
 We can also handle errors in our promises like this
@@ -217,7 +220,7 @@ We can also handle errors in our promises like this
 ```js
 Cypress.Promise.onPossiblyUnhandledRejection((error, promise) => {
   throw error;
-})
+});
 ```
 
 ### Writing our first test
@@ -233,17 +236,17 @@ Now that we’ve gotten all of this out of the way, I am sure we will want to wr
 Now that we have a plan of action, we want to write our test.
 
 ```js
-describe('Navigating to our URL', () => {
-  it('is successful', () => {
-    cy.visit('www.localhost:3000');
+describe("Navigating to our URL", () => {
+  it("is successful", () => {
+    cy.visit("www.localhost:3000");
     cy.location().should((page) => {
-      expect(page.hostname).to.equal('www.localhost');
-      expect(page.port).to.equal('3000');
-      expect(page.protocol).to.equal('http:');
+      expect(page.hostname).to.equal("www.localhost");
+      expect(page.port).to.equal("3000");
+      expect(page.protocol).to.equal("http:");
     });
-    cy.title().should('contain', 'cypress-testing');
-  })
-})
+    cy.title().should("contain", "cypress-testing");
+  });
+});
 ```
 
 ### Best Practices
@@ -254,14 +257,20 @@ While there are a large number of things you should know, the 2 biggest things t
 
 • Don’t target elements based on CSS attributes such as: id, class, tag
 
-• Add data-* attributes to make it easier to target elements
+• Add data-\* attributes to make it easier to target elements
 
 The reason that these 2 things, both being best practices for how to, and how not to select your elements, are because these 2 things will keep your Cypress tests from being extremely fragile and should keep things from breaking.
 
 Lets go over this really quick. Say we had this button
 
 ```js
-<button id="primary-button" class="btn btn-small" name="submit-button" role="button" data-cy="submit-button">
+<button
+  id="primary-button"
+  class="btn btn-small"
+  name="submit-button"
+  role="button"
+  data-cy="submit-button"
+>
   Submit
 </button>
 ```

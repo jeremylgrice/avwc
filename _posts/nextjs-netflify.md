@@ -1,13 +1,10 @@
 ---
-title: 'Build & deploy a great looking site with NextJS and Netlify'
-excerpt: 'Have you ever wanted a quick and easy way to build and deploy a website? Are you overwhelmed by the number of....'
-coverImage: '/assets/blog/cover-photos/fog.webp'
-date: '2022-10-15T04:30:00.322Z'
-author:
-  name: Jeremy
-  picture: '/assets/blog/authors/jeremy.jpeg'
+title: "Build & deploy a great looking site with NextJS and Netlify"
+excerpt: "Have you ever wanted a quick and easy way to build and deploy a website? Are you overwhelmed by the number of...."
+coverImage: "/assets/blog/cover-photos/fog.webp"
+date: "2022-10-15T04:30:00.322Z"
 ogImage:
-  url: '/assets/blog/cover-photos/fog.webp'
+  url: "/assets/blog/cover-photos/fog.webp"
 ---
 
 ### Precursor
@@ -22,7 +19,7 @@ The tools I will be using for this article are Next.js and Netlify. After person
 
 Next.js describes itself as:
 
-```Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.```
+`Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.`
 
 In a nutshell, it gives you all the tools you could possible need to build your application, with little to not setup needed. If you were to set something up and build it from scratch, you’d need to setup a bundler, such as webpack. You’d need to handle optimizing your production build, SEO, and dealing with server side vs client side rendering, and passing data back and forth between your data-store. This is a lot to setup, and can be very time consuming and labor intensive. With next.js, all of this is handled for us from the start, which allows us to build the things we enjoy building and get our application into production.
 

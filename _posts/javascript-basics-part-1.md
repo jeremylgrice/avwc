@@ -1,11 +1,8 @@
 ---
 title: "Learn the javascript basics - Part 1"
-excerpt: ""
+excerpt: "Hello and welcome to an introduction into the world of Javascript...."
 coverImage: "/assets/blog/cover-photos/campfire.webp"
 date: "2022-11-10T12:00:00.322Z"
-author:
-  name: Jeremy
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/campfire.webp"
 ---

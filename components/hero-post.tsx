@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
 import { Clock, User, Star } from 'lucide-react'
-import type Author from '../interfaces/author'
 import { CONTENT, getText } from '../lib/constants'
 
 type Props = {
@@ -13,7 +12,6 @@ type Props = {
   coverImage: string
   date: string
   excerpt: string
-  author: Author
   slug: string
 }
 
@@ -22,7 +20,6 @@ const HeroPost = ({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: Props) => {
   return (

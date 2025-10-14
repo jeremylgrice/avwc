@@ -1,13 +1,10 @@
 ---
-title: 'Getting Started with Custom Theme Development for Shopify'
-excerpt: 'So you want to build a custom theme for Shopify, but aren’t sure where to begin? Well then, I am here to help. The process....'
-coverImage: '/assets/blog/cover-photos/lake.webp'
-date: '2022-09-12T12:00:00.322Z'
-author:
-  name: Jeremy
-  picture: '/assets/blog/authors/jeremy.jpeg'
+title: "Getting Started with Custom Theme Development for Shopify"
+excerpt: "So you want to build a custom theme for Shopify, but aren’t sure where to begin? Well then, I am here to help. The process...."
+coverImage: "/assets/blog/cover-photos/lake.webp"
+date: "2022-09-12T12:00:00.322Z"
 ogImage:
-  url: '/assets/blog/cover-photos/lake.webp'
+  url: "/assets/blog/cover-photos/lake.webp"
 ---
 
 So you want to build a custom theme for Shopify, but aren’t sure where to begin? Well then, I am here to help. The process is pretty straight forward, but there are a few things you will need before you can begin. First, you will need a computer that is capable of running an IDE. I personally use a mac, but a windows computer or one running any form of linux will work as well (I will just be using terminal commands from my mac, but these may also work on Windows)

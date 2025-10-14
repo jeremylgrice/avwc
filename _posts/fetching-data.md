@@ -3,9 +3,6 @@ title: "Fetching Data From an API With the Fetch API in React"
 excerpt: "Learn how to fetch data using the Fetch API inside a React class component with real-world examples and best practices."
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2021-05-19T03:27:05.942Z"
-author:
-  name: Jeremy
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"
 ---

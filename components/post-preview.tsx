@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
 import { Clock, User } from 'lucide-react'
-import type Author from '../interfaces/author'
 import { getText } from '../lib/constants'
 
 type Props = {
@@ -13,7 +12,6 @@ type Props = {
   coverImage: string
   date: string
   excerpt: string
-  author: Author
   slug: string
 }
 
@@ -22,7 +20,6 @@ const PostPreview = ({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: Props) => {
   return (
@@ -72,13 +69,6 @@ const PostPreview = ({
           <CardDescription className="line-clamp-3 text-surface-200 leading-relaxed">
             {excerpt}
           </CardDescription>
-          
-          <div className="flex items-center gap-3 pt-2 border-t border-surface-700">
-            <div className="flex items-center gap-2 text-sm text-surface-300">
-              <User className="h-3 w-3" />
-              <span>{author.name}</span>
-            </div>
-          </div>
         </CardContent>
       </Card>
     </motion.article>

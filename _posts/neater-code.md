@@ -3,9 +3,6 @@ title: "Write Neater Code by Utilizing the React Context API — An Introduc
 excerpt: "How we deal with data is crucial in React. Learn how the Context API helps reduce prop drilling and improve code readability."
 coverImage: "/assets/blog/cover-photos/camping.webp"
 date: "2021-05-26T02:16:43.549Z"
-author:
-  name: Jeremy
-  picture: "/assets/blog/authors/jeremy.jpeg"
 ogImage:
   url: "/assets/blog/cover-photos/camping.webp"
 ---
