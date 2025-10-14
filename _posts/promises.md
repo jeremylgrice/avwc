@@ -1,8 +1,8 @@
 ---
 title: "Level Up Your JavaScript Skills With the Inclusion of Promises"
 excerpt: "What is a promise in JavaScript? It is a block of code that may produce a value at some point in time...."
-coverImage: '/assets/blog/cover-photos/fire.webp'
-date: '2022-09-27T05:35:07.322Z'
+coverImage: "/assets/blog/cover-photos/fire.webp"
+date: "2022-09-27T05:35:07.322Z"
 ogImage:
   url: "/assets/blog/cover-photos/fire.webp"
 ---
